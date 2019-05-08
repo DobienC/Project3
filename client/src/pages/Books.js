@@ -53,11 +53,29 @@ class Books extends Component {
     }
   };
 
+  getCharacter = () => {
+    API.getCharacters()
+      .then(res => 
+        console.log(res)
+      )
+      .catch(err => console.log(err));
+  }
+
+  createCharacter = () => {
+    API.createCharacter()
+      .then(res => 
+        console.log(res)
+      )
+      .catch(err => console.log(err));
+  }
+
   render() {
     return (
       <Container fluid>
         <Row>
           <Col size="md-6">
+          {this.createCharacter()}
+          {this.getCharacter()}
             <Jumbotron>
               <h1>What Books Should I Read?</h1>
             </Jumbotron>

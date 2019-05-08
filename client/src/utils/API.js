@@ -16,5 +16,12 @@ export default {
   // Saves a book to the database
   saveBook: function(bookData) {
     return axios.post("/api/books", bookData);
+  },
+  // Gets all characters
+  getCharacters: function() {
+    return axios.get("/api/characters");
+  },
+  createCharacter: function(){
+    return axios.post("/api/characters");
   }
 };
