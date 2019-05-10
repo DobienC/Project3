@@ -53,18 +53,28 @@ class Books extends Component {
     }
   };
 
+
+  // Character stuff
   getCharacter = () => {
     API.getCharacters()
       .then(res => 
-        console.log(res)
+        console.log(res.data)
       )
       .catch(err => console.log(err));
   }
 
   createCharacter = () => {
-    API.createCharacter()
+    API.createCharacter({})
       .then(res => 
-        console.log(res)
+        console.log(res.data)
+      )
+      .catch(err => console.log(err));
+  }
+
+  deleteAllCharacters = () => {
+    API.clearCharacter()
+      .then(res =>
+        console.log(res.data)
       )
       .catch(err => console.log(err));
   }
@@ -76,6 +86,7 @@ class Books extends Component {
           <Col size="md-6">
           {this.createCharacter()}
           {this.getCharacter()}
+          {this.deleteAllCharacters()}
             <Jumbotron>
               <h1>What Books Should I Read?</h1>
             </Jumbotron>

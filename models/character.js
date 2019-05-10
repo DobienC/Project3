@@ -8,7 +8,7 @@ const characterSchema = new Schema({
     level: { type: Number},
     race: { type: String, required: true, default: "Human" },
     background: { type: String },
-    alignment: { type: String, required: true, defauly: "Neutral" },
+    alignment: { type: String, required: true, default: "Neutral" },
     // Stats
     strength: { type: Number, required: true, default: 8 },
     dexterity: { type: Number, required: true, default: 8 },

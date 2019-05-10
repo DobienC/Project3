@@ -4,7 +4,8 @@ const charactersController = require("../../controllers/charactersController");
 // Matches with "/api/books"
 router.route("/")
   .get(charactersController.findAll)
-  .post(charactersController.create);
+  .post(charactersController.create)
+  .delete(charactersController.deleteAll);
 
 // Matches with "/api/books/:id"
 // router

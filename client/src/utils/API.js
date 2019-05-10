@@ -23,5 +23,8 @@ export default {
   },
   createCharacter: function(){
     return axios.post("/api/characters");
+  },
+  clearCharacter: function(){
+    return axios.delete("/api/characters");
   }
 };

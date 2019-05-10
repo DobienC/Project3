@@ -1,4 +1,5 @@
 const db = require("../models");
+//
 
 // Defining methods for the booksController
 module.exports = {
@@ -12,6 +13,13 @@ module.exports = {
   create: function(req, res) {
     db.Character
       .create(req.body)
+    //  .create(req.body)
+      .then(dbModel => res.json(dbModel))
+      .catch(err => res.status(422).json(err));
+  },
+  deleteAll: function(req, res) {
+    db.Character
+      .remove({})
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   }
