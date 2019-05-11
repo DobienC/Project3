@@ -17,14 +17,23 @@ export default {
   saveBook: function(bookData) {
     return axios.post("/api/books", bookData);
   },
+  
   // Gets all characters
   getCharacters: function() {
     return axios.get("/api/characters");
   },
-  createCharacter: function(){
+  createDefaultCharacter: function() {
     return axios.post("/api/characters");
   },
-  clearCharacter: function(){
+  clearCharacter: function() {
     return axios.delete("/api/characters");
+  },
+
+  // Gets all users
+  getUsers: function() {
+    return axios.get("/api/users");
+  },
+  createUser: function(userData) {
+    return axios.post("/api/users", userData)
   }
 };

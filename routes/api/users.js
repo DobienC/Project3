@@ -1,11 +1,11 @@
 const router = require("express").Router();
-const charactersController = require("../../controllers/charactersController");
+const usersController = require("../../controllers/usersController");
 
 // Matches with "/api/books"
 router.route("/")
-  .get(charactersController.findAll)
-  .post(charactersController.createDefault)
-  .delete(charactersController.deleteAll);
+  .get(usersController.findAll)
+  .post(usersController.create);
+//   .delete(charactersController.deleteAll);
 
 // Matches with "/api/books/:id"
 // router
