@@ -22,8 +22,8 @@ export default {
   getCharacters: function() {
     return axios.get("/api/characters");
   },
-  createDefaultCharacter: function() {
-    return axios.post("/api/characters");
+  createCharacter: function(newCharacter) {
+    return axios.post("/api/characters", newCharacter);
   },
   clearCharacter: function() {
     return axios.delete("/api/characters");

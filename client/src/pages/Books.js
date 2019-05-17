@@ -84,9 +84,9 @@ class Books extends Component {
       <Container fluid>
         <Row>
           <Col size="md-6">
-          {this.createCharacter()}
+          {/* {this.createCharacter()}
           {this.getCharacter()}
-          {this.deleteAllCharacters()}
+          {this.deleteAllCharacters()} */}
             <Jumbotron>
               <h1>What Books Should I Read?</h1>
             </Jumbotron>
