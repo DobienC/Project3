@@ -4,6 +4,7 @@ import Books from "./pages/Books";
 import Detail from "./pages/Detail";
 import NoMatch from "./pages/NoMatch";
 import Characters from "./pages/Characters";
+import CharacterCreation from "./pages/CharacterCreation";
 import Nav from "./components/Nav";
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
           <Route exact path="/books" component={Books} />
           <Route exact path="/books/:id" component={Detail} />
           <Route exact path="/characters" component={Characters} />
+          <Route exact path="/characterCreation" component={CharacterCreation} />
           <Route component={NoMatch} />
         </Switch>
       </div>
