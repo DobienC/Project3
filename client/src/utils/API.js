@@ -22,6 +22,9 @@ export default {
   getCharacters: function() {
     return axios.get("/api/characters");
   },
+  getCharacter: function(id) {
+    return axios.get("/api/characters/" + id);
+  },
   createCharacter: function(newCharacter) {
     return axios.post("/api/characters", newCharacter);
   },

@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import API from "../utils/API";
-import CharacterCard from "../components/CharacterCard";
 import CharacterCreationForm from "../components/CharacterCreationForm";
 
 class CharacterCreation extends Component {

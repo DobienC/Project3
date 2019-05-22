@@ -22,9 +22,18 @@ class Characters extends Component {
       .catch(err => console.log(err));
   }
 
+  findCharacter = () => {
+    // API.getCharacter(this.props.match.params.id)
+    API.getCharacter()
+    .then(res => 
+      console.log(res.data)  
+    )
+    .catch(err => console.log(err));
+  }
+
   // User Stuff
   getUsers = () => {
-    API.getUsers()
+    API.getUsers(0)
       .then(res =>
         console.log("Here: " + res.data)  
       )
@@ -46,6 +55,7 @@ class Characters extends Component {
   render() {
     return (
         <div>
+            {this.findCharacter}
             <button onClick={this.deleteAllCharacters}>Delete</button>
             <button onClick={this.createDefaultCharacter}>Add</button>
             <button onClick={this.getCharacters}>Characters</button>
