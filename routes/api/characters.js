@@ -13,4 +13,11 @@ router.route("/:id")
   // .put(booksController.update)
   // .delete(booksController.remove);
 
+// router.route("/strength")
+//   // .get(charactersController.findAllByStr);
+//   .get(charactersController.findAll);
+router.route("/sorted/strength")
+  .get(charactersController.findAllByStr);
+
+
 module.exports = router;

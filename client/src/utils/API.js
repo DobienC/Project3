@@ -22,6 +22,9 @@ export default {
   getCharacters: function() {
     return axios.get("/api/characters");
   },
+  getCharactersByStr: function() {
+    return axios.get("/api/characters/sorted/strength");
+  },
   getCharacter: function(id) {
     return axios.get("/api/characters/" + id);
   },

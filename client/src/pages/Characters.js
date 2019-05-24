@@ -4,11 +4,16 @@ import CharacterCard from "../components/CharacterCard";
 
 class Characters extends Component {
   state = {
+    sort: this.props.match.params.sort,
     characters: []
   };
 
   componentDidMount() {
-    this.getCharacters();
+    if(this.props.match.params.sort === "new"){
+      console.log("HERER");
+    } else {
+      this.getCharacters();
+    }
   }
 
   // Character stuff
@@ -22,47 +27,40 @@ class Characters extends Component {
       .catch(err => console.log(err));
   }
 
-  findCharacter = () => {
-    // API.getCharacter(this.props.match.params.id)
-    API.getCharacter()
-    .then(res => 
-      console.log(res.data)  
-    )
-    .catch(err => console.log(err));
-  }
-
-  // User Stuff
-  getUsers = () => {
-    API.getUsers(0)
+  getCharactersByStr = () => {
+    API.getCharactersByStr()
       .then(res =>
-        console.log("Here: " + res.data)  
+        this.setState({
+          characters: res.data
+        }) 
       )
-      .catch(err => console.log(err));
+      .catch(err => console.log(err.response));
   }
 
-  createUser = () => {
-    API.createUser({
-      name: "Dobien",
-      email: "Dobien@gmail.com",
-      password: "Password"
+  sortByNewCharacters = () => {
+    this.setState({
+      characters: this.state.characters.reverse()
     })
-      .then(res => 
-        console.log(res.data)
-      )
-      .catch(err => console.log(err));
+  }
+
+  isSorted = () => {
+    if(this.state.sort === "new"){
+      console.log("Here")
+    } else {
+      console.log("UNDEFINED")
+    }
   }
 
   render() {
     return (
         <div>
             {this.findCharacter}
-            <button onClick={this.deleteAllCharacters}>Delete</button>
-            <button onClick={this.createDefaultCharacter}>Add</button>
+            <button onClick={this.getCharactersByStr}>Sort</button>
+            <button onClick={this.sortByNewCharacters}>New</button>
             <button onClick={this.getCharacters}>Characters</button>
-            <button onClick={this.createUser}>Test Users</button>
             <a href="./characterCreation">Create Character</a>
             {this.state.characters.map(character => (
-              <CharacterCard name={character.name} id={character._id}/>
+              <CharacterCard name={character.name} id={character._id} character={character}/>
             ))}
             {/* <CharacterCard /> */}
         </div>
@@ -71,3 +69,25 @@ class Characters extends Component {
 }
 
 export default Characters;
+
+
+  // User Stuff
+  // getUsers = () => {
+  //   API.getUsers(0)
+  //     .then(res =>
+  //       console.log("Here: " + res.data)  
+  //     )
+  //     .catch(err => console.log(err));
+  // }
+
+  // createUser = () => {
+  //   API.createUser({
+  //     name: "Dobien",
+  //     email: "Dobien@gmail.com",
+  //     password: "Password"
+  //   })
+  //     .then(res => 
+  //       console.log(res.data)
+  //     )
+  //     .catch(err => console.log(err));
+  // }
