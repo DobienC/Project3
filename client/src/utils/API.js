@@ -22,11 +22,20 @@ export default {
   getCharacters: function() {
     return axios.get("/api/characters");
   },
-  getCharactersByStr: function() {
-    return axios.get("/api/characters/sorted/strength");
+  getCharactersByClass: function() {
+    return axios.get("/api/characters/sorted/class");
+  },
+  getCharactersByRace: function() {
+    return axios.get("/api/characters/sorted/race");
+  },
+  getCharactersByName: function() {
+    return axios.get("/api/characters/sorted/name");
   },
   getCharacter: function(id) {
     return axios.get("/api/characters/" + id);
+  },
+  deleteCharacterById: function(id) {
+    return axios.delete("/api/characters/" + id)
   },
   createCharacter: function(newCharacter) {
     return axios.post("/api/characters", newCharacter);

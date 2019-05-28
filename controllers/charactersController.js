@@ -6,14 +6,28 @@ module.exports = {
   findAll: function(req, res) {
     db.Character
       .find(req.query)
-      .sort({ date: 'ascending' })
+      .sort({ date : 1 })
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
-  findAllByStr: function(req, res) {
+  findAllByClass: function(req, res) {
     db.Character
       .find(req.query)
-      .sort({ strength: -1 })
+      .sort({ class: 1 })
+      .then(dbModel => res.json(dbModel))
+      .catch(err => res.status(422).json(err));
+  },
+  findAllByRace: function(req, res) {
+    db.Character
+      .find(req.query)
+      .sort({ race: 1 })
+      .then(dbModel => res.json(dbModel))
+      .catch(err => res.status(422).json(err));
+  },
+  findByName: function(req, res){
+    db.Character
+      .find(req.query)
+      .sort({ name: 1 })
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
@@ -32,6 +46,13 @@ module.exports = {
   deleteAll: function(req, res) {
     db.Character
       .remove({})
+      .then(dbModel => res.json(dbModel))
+      .catch(err => res.status(422).json(err));
+  },
+  deleteById: function(req, res) {
+    db.Character
+      .findById({ _id: req.params.id })
+      .then(dbModel => dbModel.remove())
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   }

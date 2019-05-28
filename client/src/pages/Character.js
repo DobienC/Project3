@@ -18,6 +18,12 @@ class Character extends Component {
             .catch(err => console.log(err));
     }
 
+    delete = () => {
+        API.deleteCharacterById(this.props.match.params.id)
+            .then(res => this.setState({character: res.data}))
+            .catch(err => console.log(err));
+    }
+
     list = () => {
         console.log(this.state.character)
     }
@@ -109,6 +115,7 @@ class Character extends Component {
                         </div>
                     </div>
                 </div>
+                <button className="btn-primary" onClick={this.delete}>Delete</button>
             </div>
         )
     }

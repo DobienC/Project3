@@ -9,11 +9,7 @@ class Characters extends Component {
   };
 
   componentDidMount() {
-    if(this.props.match.params.sort === "new"){
-      console.log("HERER");
-    } else {
-      this.getCharacters();
-    }
+    this.getCharacters();
   }
 
   // Character stuff
@@ -27,42 +23,73 @@ class Characters extends Component {
       .catch(err => console.log(err));
   }
 
-  getCharactersByStr = () => {
-    API.getCharactersByStr()
+  getRandomCharacters = () => {
+    API.getCharacters()
+      .then(res =>
+        this.setState({
+          characters: res.data.shuffle
+        })
+      )
+  }
+
+  getCharactersByClass = () => {
+    API.getCharactersByClass()
       .then(res =>
         this.setState({
           characters: res.data
-        }) 
+        })  
+      )
+      .catch(err => console.log(err.response));
+  }
+
+  getCharactersByRace = () => {
+    API.getCharactersByRace()
+      .then(res =>
+        this.setState({
+          characters: res.data
+        })  
       )
       .catch(err => console.log(err.response));
   }
 
   sortByNewCharacters = () => {
-    this.setState({
-      characters: this.state.characters.reverse()
-    })
+    API.getCharacters()
+      .then(res => 
+        this.setState({
+          characters: res.data.reverse()
+        })
+      )
+      .catch(err => console.log(err));
   }
 
-  isSorted = () => {
-    if(this.state.sort === "new"){
-      console.log("Here")
-    } else {
-      console.log("UNDEFINED")
-    }
+  getCharactersByName = () => {
+    API.getCharactersByName()
+      .then(res => 
+        this.setState({
+          characters: res.data
+        })
+      )
+      .catch(err => console.log(err.reponse));
+  }
+
+  shuffle = () => {
+    this.setState({
+      characters: this.state.characters.sort(() => Math.random() - 0.5)
+    })
   }
 
   render() {
     return (
         <div>
-            {this.findCharacter}
-            <button onClick={this.getCharactersByStr}>Sort</button>
-            <button onClick={this.sortByNewCharacters}>New</button>
-            <button onClick={this.getCharacters}>Characters</button>
-            <a href="./characterCreation">Create Character</a>
+            <strong>Sort By: </strong>
+            <button className="btn-primary mr-1 mt-1" onClick={this.sortByNewCharacters}>New</button>
+            <button className="btn-primary mr-1 mt-1" onClick={this.shuffle}>Random</button>
+            <button className="btn-primary mr-1 mt-1" onClick={this.getCharactersByClass}>Class</button>
+            <button className="btn-primary mr-1 mt-1" onClick={this.getCharactersByRace}>Race</button>
+            <button className="btn-primary mr-1 mt-1" onClick={this.getCharactersByName}>Name</button>
             {this.state.characters.map(character => (
               <CharacterCard name={character.name} id={character._id} character={character}/>
             ))}
-            {/* <CharacterCard /> */}
         </div>
     )
   }

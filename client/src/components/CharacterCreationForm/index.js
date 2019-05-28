@@ -28,7 +28,14 @@ function CharacterCreationForm(props) {
                     <div className="input-group-prepend">
                       <span className="input-group-text">Race</span>
                     </div>
-                    <input type="text" onChange={props.handleInputChange} id="race" className="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" />
+                    {/* <input type="text" onChange={props.handleInputChange} id="race" className="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" /> */}
+                    <select name="race" onChange={props.handleInputChange}>
+                      <option value="human">Human</option>
+                      <option value="human">Elf</option>
+                      <option value="human">Dwarf</option>
+                      <option value="human">Halfling</option>
+                      <option value="human">Goliath</option>
+                    </select>
                   </div>
                 </div>
                 <div className="col-lg-2">
@@ -57,13 +64,13 @@ function CharacterCreationForm(props) {
                 </div>
               </div>
               <div className="row">
-                <div className="col-lg-2">
+                <div className="col-lg-3">
                   <div className="col-lg-12">Strength
                     <div className="input-group input-group-lg">
                       <div className="input-group-prepend">
                         <span className="input-group-text">STR</span>
                       </div>
-                      <input type="text" onChange={props.handleInputChange} id="strength" className="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm" />
+                      <input type="number" min="0" max="20" defaultValue="8" onChange={props.handleInputChange} id="strength" className="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm" />
                     </div>
                   </div>
                   <div className="col-lg-12">Dexterity
@@ -71,7 +78,7 @@ function CharacterCreationForm(props) {
                       <div className="input-group-prepend">
                         <span className="input-group-text">DEX</span>
                       </div>
-                      <input type="text" onChange={props.handleInputChange} id="dexterity" className="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm" />
+                      <input type="number" min="0" max="20" defaultValue="8" onChange={props.handleInputChange} id="dexterity" className="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm" />
                     </div>
                   </div>
                   <div className="col-lg-12">Constitution
@@ -79,7 +86,7 @@ function CharacterCreationForm(props) {
                       <div className="input-group-prepend">
                         <span className="input-group-text">CON</span>
                       </div>
-                      <input type="text" onChange={props.handleInputChange} id="constitution" className="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm" />
+                      <input type="number" min="0" max="20" defaultValue="8" onChange={props.handleInputChange} id="constitution" className="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm" />
                     </div>
                   </div>
                   <div className="col-lg-12">Intelligence
@@ -87,7 +94,7 @@ function CharacterCreationForm(props) {
                       <div className="input-group-prepend">
                         <span className="input-group-text">INT</span>
                       </div>
-                      <input type="text" onChange={props.handleInputChange} id="intelligence" className="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm" />
+                      <input type="number" min="0" max="20" defaultValue="8" onChange={props.handleInputChange} id="intelligence" className="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm" />
                     </div>
                   </div>
                   <div className="col-lg-12">Wisdom
@@ -95,7 +102,7 @@ function CharacterCreationForm(props) {
                       <div className="input-group-prepend">
                         <span className="input-group-text">WIS</span>
                       </div>
-                      <input type="text" onChange={props.handleInputChange} id="wisdom" className="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm" />
+                      <input type="number" min="0" max="20" defaultValue="8" onChange={props.handleInputChange} id="wisdom" className="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm" />
                     </div>
                   </div>
                   <div className="col-lg-12">Charisma
@@ -103,11 +110,11 @@ function CharacterCreationForm(props) {
                       <div className="input-group-prepend">
                         <span className="input-group-text">CHA</span>
                       </div>
-                      <input type="text" onChange={props.handleInputChange} id="charisma" className="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm" />
+                      <input type="number" min="0" max="20" defaultValue="8" onChange={props.handleInputChange} id="charisma" className="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm" />
                     </div>
                   </div>
                 </div>
-                <div className="col-lg-10">
+                <div className="col-lg-9">
                   <div className="row">
                     <div className="col-lg-6">Personality Trait
                       <div className="input-group">
