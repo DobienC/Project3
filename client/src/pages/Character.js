@@ -20,7 +20,10 @@ class Character extends Component {
 
     delete = () => {
         API.deleteCharacterById(this.props.match.params.id)
-            .then(res => this.setState({character: res.data}))
+            .then(res => {
+                this.setState({character: res.data})
+                window.location.assign('/characters')
+            })
             .catch(err => console.log(err));
     }
 
