@@ -44,15 +44,11 @@ class Character extends Component {
                         </div>
                         <div className="col-lg-10">
                             <div className="row">
-                                <div className="col-sm-4 text-center">
-                                    <strong>Level: </strong>
-                                    {this.state.character.level}
-                                </div>
-                                <div className="col-sm-4 text-center">
+                                <div className="col-sm-6 text-center">
                                     <strong>Race: </strong>
                                     {this.state.character.race}
                                 </div>
-                                <div className="col-sm-4 text-center">
+                                <div className="col-sm-6 text-center">
                                     <strong>Class: </strong>
                                     {this.state.character.class}
                                 </div>
@@ -115,6 +111,20 @@ class Character extends Component {
                                     <p>{this.state.character.flaws}</p>
                                 </div>
                             </div>
+                        </div>
+                    </div>
+                    <div className="row">
+                        <div className="col-lg-12">
+                            <h6>Appearance Description: </h6>
+                            <p>
+                                {this.state.character.appearance}
+                            </p>
+                        </div>
+                        <div className="col-lg-12">
+                            <h6>Origin Story: </h6>
+                            <p>
+                                {this.state.character.origin}
+                            </p>
                         </div>
                     </div>
                 </div>

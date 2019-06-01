@@ -5,7 +5,6 @@ const characterSchema = new Schema({
     // Identification
     name: { type: String, required: true, default: "NewGuy" },
     class: { type: String},
-    level: { type: Number},
     race: { type: String, required: true, default: "Human" },
     background: { type: String },
     alignment: { type: String, required: true, default: "Neutral" },
@@ -26,8 +25,10 @@ const characterSchema = new Schema({
     ideals: { type: String, required: true, default: "Be a good guy" },
     bonds: { type: String, required: true, default: "I love my mom" },
     flaws: { type: String, required: true, default: "I hate bad people" },
+    origin: { type: String },
     // Equipment
     equipment: { type: [String]},
+    appearance: { type: String },
     // Extra
     proficiencies: { type: String },
     languages: { type: [String], required: true, default: "Common" },
