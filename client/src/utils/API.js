@@ -48,6 +48,9 @@ export default {
   getUsers: function() {
     return axios.get("/api/users");
   },
+  getOneUser: function() {
+    return axios.get("/api/users/getOne");
+  },
   createUser: function(userData) {
     return axios.post("/api/users", userData)
   }
