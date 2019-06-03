@@ -24,11 +24,40 @@ module.exports = {
       .catch(err => res.status(422).json(err));
   },
   create: function(req, res) {
+    const { username, email, password } = req.body;
+
+    bcrypt.hash(password, 10, function(err, hash) {
+      const user = {
+        username,
+        email,
+        password: hash
+      }
+
+      db.User
+        .create(user)
+        .then(dbModel => res.json(dbModel))
+        .catch(err => res.status(422).json(err));
+    });
+  },
+  login: function(req, res) {
+    const { email, password } = req.body;
+
     db.User
-      .create(req.body)
-      .then(dbModel => res.json(dbModel))
-      .catch(err => res.status(422).json(err));
+      .findOne({ email })
+      .then(dbModel => {
+        bcrypt.compare( password, dbModel.password, function(err, same){
+          if(same){
+            return res.json({ok: true});
+          } else {
+            return res.status(404).json({
+              error: "Passowrd/Email not matching"
+            })
+          }
+        })
+      })
+      .catch(err => res.status(403).json(err));
   }
+
 };
     //   deleteAll: function(req, res) {
     //     db.User

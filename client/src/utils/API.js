@@ -45,13 +45,16 @@ export default {
   },
 
   // Gets all users
-  getUsers: function() {
-    return axios.get("/api/users");
+  signup: function(userData) {
+    return axios.post("/api/users/signup", userData)
   },
-  getOneUser: function() {
-    return axios.get("/api/users/getOne");
-  },
-  createUser: function(userData) {
-    return axios.post("/api/users", userData)
+  login: function(userData){
+    return axios.post("api/users/login", userData)
   }
+  // getUsers: function() {
+  //   return axios.get("/api/users");
+  // },
+  // getOneUser: function() {
+  //   return axios.get("/api/users/getOne");
+  // },
 };

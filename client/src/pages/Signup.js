@@ -1,13 +1,23 @@
 import React, { Component } from "react";
 // import API from "../utils/API";
 
-class Login extends Component {
+class Signup extends Component {
     state = {
+        username: '',
         email: '',
-        password: ''
+        password: '',
+        checker: ''
     }
 
     onChange = key => e => this.setState({ [key]: e.target.value });
+
+    checkPassword = () => {
+        if(this.state.password === this.state.checker){
+            alert("true");
+        } else {
+            alert("false");
+        }
+    }
 
     render() {
         return (
@@ -15,7 +25,16 @@ class Login extends Component {
                 <div className="container">
                     <div className="row text-center">
                         <div className="col-lg-12">
-                            <h1>Login</h1>
+                            <h1>Signup</h1>
+                        </div>
+                        <div className="col-lg-12 float-right">
+                            Username: 
+                            <input
+                                type="text"
+                                value={this.state.username}
+                                label="email"
+                                onChange={this.onChange('username')}
+                            />
                         </div>
                         <div className="col-lg-12 float-right">
                             Email: 
@@ -35,11 +54,20 @@ class Login extends Component {
                                 onChange={this.onChange('password')}
                             />
                         </div>
+                        <div className="col-lg-12 float-right">
+                            Verify Password: 
+                            <input
+                                type="password"
+                                value={this.state.checker}
+                                label="password"
+                                onChange={this.onChange('checker')}
+                            />
+                        </div>
                         <div className="col-lg-12">
                             <button
                                 className="btn-primary"    
-                                onClick={this.onSubmit}
-                                disabled={!Boolean(this.state.email && this.state.password)}
+                                onClick={this.checkPassword}
+                                disabled={!Boolean(this.state.email && this.state.password && this.state.checker)}
                                 >
                                 Login
                             </button>
@@ -51,4 +79,4 @@ class Login extends Component {
     }
 }
 
-export default Login;
+export default Signup;
