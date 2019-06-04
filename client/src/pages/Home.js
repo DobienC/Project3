@@ -1,12 +1,15 @@
 import React, { Component } from "react";
-// import API from "../utils/API";
 
 class Home extends Component {
     state = {
     }
 
-    signIn = () => {
+    login = () => {
         window.location.assign('/login')
+    }
+
+    signup = () => {
+        window.location.assign("/signup")
     }
 
     render() {
@@ -20,15 +23,15 @@ class Home extends Component {
                             <div className="row">
                                 <div className="col-lg-5"></div>
                                 <div className="col-lg-2 mt-3">
-                                    <button className="btn-primary" onClick={this.signIn}>
-                                        <h3>New</h3>
+                                    <button className="btn-primary" onClick={this.signup}>
+                                        <h3>New Adventurer</h3>
                                         (new user)
                                     </button>
                                 </div>
                                 <div className="col-lg-5"></div>
                                 <div className="col-lg-5"></div>
                                 <div className="col-lg-2 mt-3">
-                                    <button className="btn-primary" onClick={this.signIn}>
+                                    <button className="btn-primary" onClick={this.login}>
                                         <h3>Returning</h3>
                                         (login)
                                     </button>

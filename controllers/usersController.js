@@ -1,8 +1,6 @@
 const db = require("../models");
 const bcrypt = require("bcrypt");
 
-//
-
 // Defining methods for the usersController
 module.exports = {
   findAll: function(req, res) {
@@ -10,7 +8,6 @@ module.exports = {
       .find(req.query)
       .sort({ date: -1 })
       .then(dbModel => 
-        // res.json(bcrypt.hashSync(dbModel[0].password, 10))
         res.json(dbModel)
       )
       .catch(err => res.status(422).json(err));
@@ -23,7 +20,7 @@ module.exports = {
       )
       .catch(err => res.status(422).json(err));
   },
-  create: function(req, res) {
+  signup: function(req, res) {
     const { username, email, password } = req.body;
 
     bcrypt.hash(password, 10, function(err, hash) {
@@ -57,7 +54,6 @@ module.exports = {
       })
       .catch(err => res.status(403).json(err));
   }
-
 };
     //   deleteAll: function(req, res) {
     //     db.User
