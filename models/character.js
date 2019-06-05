@@ -2,6 +2,7 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const characterSchema = new Schema({
+    creator: { type: String, required: true },
     // Identification
     name: { type: String, required: true, default: "NewGuy" },
     class: { type: String},
@@ -21,10 +22,10 @@ const characterSchema = new Schema({
     speed: { type: Number },
     hitPoints: { type: Number },
     // Personality
-    personalityTrait: { type: String, required: true, default: "Weird" },
-    ideals: { type: String, required: true, default: "Be a good guy" },
-    bonds: { type: String, required: true, default: "I love my mom" },
-    flaws: { type: String, required: true, default: "I hate bad people" },
+    personalityTrait: { type: String, required: true, default: "N/A" },
+    ideals: { type: String, required: true, default: "N/A" },
+    bonds: { type: String, required: true, default: "N/A" },
+    flaws: { type: String, required: true, default: "N/A" },
     origin: { type: String },
     // Equipment
     equipment: { type: [String]},

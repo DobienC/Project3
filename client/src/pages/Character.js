@@ -3,6 +3,7 @@ import API from "../utils/API";
 
 class Character extends Component {
     state = {
+        creator_id: "",
         id: this.props.match.params.id,
         character: {}
     }
@@ -16,15 +17,27 @@ class Character extends Component {
         API.getCharacter(this.props.match.params.id)
             .then(res => this.setState({character: res.data}))
             .catch(err => console.log(err));
+        API.getCharacter(this.props.match.params.id)
+            .then(res => this.setState({creator_id: res.data.creator}))
+            .catch(err => console.log(err));
     }
 
     delete = () => {
-        API.deleteCharacterById(this.props.match.params.id)
-            .then(res => {
-                this.setState({character: res.data})
-                window.location.assign('/characters')
-            })
-            .catch(err => console.log(err));
+        const request_user = localStorage.getItem('userId');
+        if(request_user === this.state.creator_id){
+            API.deleteCharacterById(
+                this.props.match.params.id,
+                localStorage.getItem('token')
+                )
+                .then(res => {
+                    this.setState({character: res.data})
+                    window.location.assign('/characters')
+                })
+                .catch(err => console.log(err));
+
+        } else {
+            alert("Not the right credentials");
+        }
     }
 
     list = () => {

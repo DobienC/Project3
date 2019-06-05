@@ -31,14 +31,15 @@ export default {
   getCharactersByName: function() {
     return axios.get("/api/characters/sorted/name");
   },
-  getCharacter: function(id) {
+  getCharacter: function(id, head) {
     return axios.get("/api/characters/" + id);
+    // , { 'headers': { 'Authorization': head } });
   },
-  deleteCharacterById: function(id) {
-    return axios.delete("/api/characters/" + id)
+  deleteCharacterById: function(id, head) {
+    return axios.delete("/api/characters/" + id, { 'headers': { 'Authorization': head } })
   },
-  createCharacter: function(newCharacter) {
-    return axios.post("/api/characters", newCharacter);
+  createCharacter: function(newCharacter, head) {
+    return axios.post("/api/characters",newCharacter, { 'headers': { 'Authorization': head } });
   },
   clearCharacter: function() {
     return axios.delete("/api/characters");
@@ -51,10 +52,4 @@ export default {
   login: function(userData){
     return axios.post("/api/users/login", userData)
   }
-  // getUsers: function() {
-  //   return axios.get("/api/users");
-  // },
-  // getOneUser: function() {
-  //   return axios.get("/api/users/getOne");
-  // },
 };

@@ -1,5 +1,6 @@
 const db = require("../models");
 const bcrypt = require("bcrypt");
+const jwt = require("jsonwebtoken");
 
 // Defining methods for the usersController
 module.exports = {
@@ -28,7 +29,7 @@ module.exports = {
         username,
         email,
         password: hash
-      }
+      };
 
       db.User
         .create(user)
@@ -44,7 +45,11 @@ module.exports = {
       .then(dbModel => {
         bcrypt.compare( password, dbModel.password, function(err, same){
           if(same){
-            return res.json({ok: true});
+            const token = jwt.sign({
+              username: dbModel.username,
+              id: dbModel._id
+            }, "super-secrete");
+            return res.json({ token });
           } else {
             return res.status(404).json({
               error: "Passowrd/Email not matching"

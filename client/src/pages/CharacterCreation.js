@@ -4,13 +4,15 @@ import CharacterCreationForm from "../components/CharacterCreationForm";
 
 class CharacterCreation extends Component {
     state = {
+        creator: localStorage.getItem('userId'),
         points: 27,
         strength: 8,
         dexterity: 8,
         constitution: 8,
         intelligence: 8,
         wisdom: 8,
-        charisma: 8
+        charisma: 8,
+        message: ""
     };
 
     handleInputChange = event => {
@@ -105,10 +107,13 @@ class CharacterCreation extends Component {
     };
 
     // Character stuff
-
     createCharacter = () => {
+        console.log(this.state);
+        console.log(localStorage.getItem('token'))
+        console.log(this.state.creator);
         API.createCharacter(
-            this.state
+            this.state,
+            localStorage.getItem('token')
         )
             .then(res => 
             // console.log(res.data)
@@ -119,7 +124,9 @@ class CharacterCreation extends Component {
 
     pullData = () => {
         if(this.state.points < 0){
-            alert("Must reduce Points");
+            this.setState({message: "Must reduce Points"});
+        } else if(this.state.points >= 1) {
+            this.setState({message: "Must use all Points"});
         } else {
             switch(this.state.race){
                 case "Human":
@@ -239,7 +246,7 @@ class CharacterCreation extends Component {
     render(){
         return (
             <div>
-                <CharacterCreationForm pullData={this.pullData} handleInputChange={this.handleInputChange} points={this.state.points}/>
+                <CharacterCreationForm pullData={this.pullData} handleInputChange={this.handleInputChange} points={this.state.points} message={this.state.message}/>
             </div>
         )
     }

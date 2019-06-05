@@ -8,6 +8,13 @@ class Characters extends Component {
     characters: []
   };
 
+  decode = function(token) {
+    var base64Url = token.split('.')[1];
+    var base64 = base64Url.replace('-', '+').replace('_', '/');
+    // return JSON.parse($window.atob(base64));
+    return base64;
+  }
+
   componentDidMount() {
     this.getCharacters();
   }
@@ -81,6 +88,9 @@ class Characters extends Component {
   render() {
     return (
         <div>
+            <h1>{localStorage.getItem("userName")}</h1>
+            <h5>{localStorage.getItem("token")}</h5>
+            <h6>{localStorage.getItem("userId")}</h6>
             <strong>Sort By: </strong>
             <button className="btn-primary mr-1 mt-1" onClick={this.sortByNewCharacters}>New</button>
             <button className="btn-primary mr-1 mt-1" onClick={this.shuffle}>Random</button>

@@ -168,6 +168,7 @@ function CharacterCreationForm(props) {
                   </div>
                 </div>
               </div>
+              <p>{props.message}here</p>
               <button type="button" onClick={props.pullData} className="btn-primary text-center">Create</button>
             </div>
         </div>

@@ -1,22 +1,19 @@
 const router = require("express").Router();
 const charactersController = require("../../controllers/charactersController");
+const isAuthenticated = require("../../controllers/authentication");
 
-// Matches with "/api/books"
+// Matches with "/api/characters"
 router.route("/")
   .get(charactersController.findAll)
-  .post(charactersController.createCharacter)
-  .delete(charactersController.deleteAll);
+  .post(isAuthenticated, charactersController.createCharacter)
+  .delete(isAuthenticated, charactersController.deleteAll);
 
-// Matches with "/api/books/:id"
+// Matches with "/api/characters/:id"
 router.route("/:id")
   .get(charactersController.findById)
-  .delete(charactersController.deleteById);
-  // .put(booksController.update)
-  // .delete(booksController.remove);
+  .delete(isAuthenticated, charactersController.deleteById);
 
-// router.route("/strength")
-//   // .get(charactersController.findAllByStr);
-//   .get(charactersController.findAll);
+// Matches with "/api/characters/sorted/..."
 router.route("/sorted/class")
   .get(charactersController.findAllByClass);
 
