@@ -108,9 +108,6 @@ class CharacterCreation extends Component {
 
     // Character stuff
     createCharacter = () => {
-        console.log(this.state);
-        console.log(localStorage.getItem('token'))
-        console.log(this.state.creator);
         API.createCharacter(
             this.state,
             localStorage.getItem('token')

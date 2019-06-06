@@ -31,9 +31,11 @@ export default {
   getCharactersByName: function() {
     return axios.get("/api/characters/sorted/name");
   },
-  getCharacter: function(id, head) {
+  getCharacter: function(id) {
     return axios.get("/api/characters/" + id);
-    // , { 'headers': { 'Authorization': head } });
+  },
+  getByUser: function(id) {
+    return axios.get("/api/characters/user/" + id);
   },
   deleteCharacterById: function(id, head) {
     return axios.delete("/api/characters/" + id, { 'headers': { 'Authorization': head } })

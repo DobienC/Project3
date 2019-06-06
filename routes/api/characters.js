@@ -23,4 +23,7 @@ router.route("/sorted/race")
 router.route("/sorted/name")
   .get(charactersController.findByName);
 
+router.route("/user/:id")
+  .get(charactersController.findByUser);
+
 module.exports = router;

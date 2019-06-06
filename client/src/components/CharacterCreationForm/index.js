@@ -1,12 +1,23 @@
 import React from "react";
-// import "./style.css";
+import "./style.css";
 
 function CharacterCreationForm(props) {
+
+  function isSignedIn() {
+    const isLoggedIn = localStorage.getItem("userName");
+    if (!isLoggedIn) {
+      return <div className="text-center">
+        <h2>Warning: Must be signed in to create a character</h2>
+      </div>;
+    }
+  }
+
     return (
         <div>
-            <div className="container mt-3">
-              <div className="row">
-                {/* Identification */}
+            <div className="container cc-form mt-3">
+              {isSignedIn()}
+              <div className="row mt-3">
+                <div className="col-lg-2"></div>
                 <div className="col-lg-2">
                   <div className="input-group input-group-sm mb-3">
                     <div className="input-group-prepend">
@@ -59,9 +70,10 @@ function CharacterCreationForm(props) {
                       <option value="Wizard">Wizard</option>
                       <option value="Blood Hunter">Blood Hunter</option>
                     </select>
-                    </div>
+                  </div>
                 </div>
-                <div className="col-lg-2">
+                <div className="col-lg-3"></div>
+                <div className="col-lg-4">
                   <div className="input-group input-group-sm mb-3">
                     <div className="input-group-prepend">
                       <span className="input-group-text">Background</span>
@@ -69,7 +81,7 @@ function CharacterCreationForm(props) {
                     <input type="text" onChange={props.handleInputChange} id="background" className="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" />
                   </div>
                 </div>
-                <div className="col-lg-2">
+                <div className="col-lg-3">
                   <div className="input-group input-group-sm mb-3">
                     <div className="input-group-prepend">
                       <span className="input-group-text">Alignment</span>

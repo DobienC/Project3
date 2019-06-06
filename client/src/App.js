@@ -6,6 +6,7 @@ import Signup from "./pages/Signup";
 import NoMatch from "./pages/NoMatch";
 import Characters from "./pages/Characters";
 import Character from "./pages/Character";
+import UserPage from "./pages/UserPage";
 import CharacterCreation from "./pages/CharacterCreation";
 import Nav from "./components/Nav";
 // import Books from "./pages/Books";
@@ -22,6 +23,7 @@ function App() {
           <Route exact path="/signup" component={Signup} />
           <Route exact path="/characters" component={Characters} />
           <Route exact path="/character/:id" component={Character} />
+          <Route exact path="/user/:id" component={UserPage} />
           <Route exact path="/characterCreation" component={CharacterCreation} />
           <Route component={NoMatch} />
           {/* <Route exact path="/books" component={Books} />

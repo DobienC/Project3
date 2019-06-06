@@ -36,6 +36,15 @@ module.exports = {
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
+  findByUser: function(req, res) {
+    db.Character
+      .find({creator: req.params.id})
+      .then(dbModel => {
+        res.json(dbModel)
+      })
+      // .then(dbModel => console.log(dbModel))
+      .catch(err => res.status(422).json(err));
+  },
   createCharacter: function(req, res) {
     db.Character
       .create(req.body)

@@ -11,7 +11,6 @@ class Characters extends Component {
   decode = function(token) {
     var base64Url = token.split('.')[1];
     var base64 = base64Url.replace('-', '+').replace('_', '/');
-    // return JSON.parse($window.atob(base64));
     return base64;
   }
 
@@ -94,9 +93,15 @@ class Characters extends Component {
             <button className="btn-primary mr-1 mt-1" onClick={this.getCharactersByClass}>Class</button>
             <button className="btn-primary mr-1 mt-1" onClick={this.getCharactersByRace}>Race</button>
             <button className="btn-primary mr-1 mt-1" onClick={this.getCharactersByName}>Name</button>
-            {this.state.characters.map(character => (
-              <CharacterCard name={character.name} id={character._id} character={character}/>
-            ))}
+            <div className="container">
+              <div className="row">
+                {this.state.characters.map(character => (
+                  <div className="col-lg-4 mb-2 mt-1">
+                    <CharacterCard name={character.name} id={character._id} character={character}/>
+                  </div>
+                ))}
+              </div>
+            </div>
         </div>
     )
   }

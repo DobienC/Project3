@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import API from "../utils/API";
+import LoginForm from "../components/LoginForm";
 
 class Login extends Component {
     state = {
@@ -38,45 +39,7 @@ class Login extends Component {
     render() {
         return (
             <div>
-                <div className="container">
-                    <div className="row text-center">
-                        <div className="col-lg-12">
-                            <h1>Login</h1>
-                        </div>
-                        <div className="col-lg-12 mt-2">
-                            Email: 
-                            <input
-                                className="ml-2"
-                                type="text"
-                                value={this.state.email}
-                                label="email"
-                                onChange={this.onChange('email')}
-                            />
-                        </div>
-                        <div className="col-lg-12 mt-2">
-                            Password: 
-                            <input
-                                className="ml-2"
-                                type="password"
-                                value={this.state.password}
-                                label="password"
-                                onChange={this.onChange('password')}
-                            />
-                        </div>
-                        <div className="col-lg-12 mt-2">
-                            <h6>{this.state.message}</h6>
-                        </div>
-                        <div className="col-lg-12 mt-3">
-                            <button
-                                className="btn-primary"    
-                                onClick={this.onSubmit}
-                                disabled={!Boolean(this.state.email && this.state.password)}
-                                >
-                                Login
-                            </button>
-                        </div>
-                    </div>
-                </div>
+                <LoginForm email={this.state.email} password={this.state.password} message={this.state.message} onSubmit={this.onSubmit} onChange={this.onChange}/>
             </div>
         )
     }

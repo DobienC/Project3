@@ -1,0 +1,72 @@
+
+.Barbarian{
+    border-style: solid;
+    border-width: 5px;
+    border-color: #E7623E;
+}
+
+.Bard{
+    border-style: solid;
+    border-width: 5px;
+    border-color: #AB6DAC;
+}
+
+.Cleric{
+    border-style: solid;
+    border-width: 5px;
+    border-color: #91A1B2;
+}
+
+.Druid{
+    border-style: solid;
+    border-width: 5px;
+    border-color: #7A853B;
+}
+
+.Fighter{
+    border-style: solid;
+    border-width: 5px;
+    border-color: #7F513E;
+}
+
+.Monk{
+    border-style: solid;
+    border-width: 5px;
+    border-color: #51A5C5;
+}
+
+.Paladin{
+    border-style: solid;
+    border-width: 5px;
+    border-color: #B59E54;
+}
+
+.Ranger{
+    border-style: solid;
+    border-width: 5px;
+    border-color: #507F62;
+}
+
+.Sorcerer{
+    border-style: solid;
+    border-width: 5px;
+    border-color: #992E2E;
+}
+
+.Warlock{
+    border-style: solid;
+    border-width: 5px;
+    border-color: #7B469B;
+}
+
+.Wizard{
+    border-style: solid;
+    border-width: 5px;
+    border-color: #2A50A1;
+}
+
+.Blood{
+    border-style: solid;
+    border-width: 5px;
+    border-color: #661919;
+}

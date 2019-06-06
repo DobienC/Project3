@@ -4,6 +4,7 @@ import API from "../utils/API";
 class Character extends Component {
     state = {
         creator_name: "",
+        creator_id: "",
         id: this.props.match.params.id,
         character: {}
     }
@@ -11,6 +12,15 @@ class Character extends Component {
     componentDidMount() {
         this.click();
     }
+
+    isSignedIn = () => {
+        const isLoggedIn = localStorage.getItem("userName");
+        if (isLoggedIn && localStorage.getItem("userName") === this.state.creator_name) {
+          return <div className="text-center">
+            <button className="btn-primary" onClick={this.delete}>Delete</button>
+          </div>;
+        }
+      }
 
     // This needs the correct ID
     click = () => {
@@ -22,7 +32,13 @@ class Character extends Component {
         API.getCharacter(this.props.match.params.id)
             .then(res => {
                 API.getUser({_id: res.data.creator})
-                    .then(res => this.setState({creator_name: res.data.username}))
+                    .then(res => {
+                        console.log(res.data)
+                        this.setState({
+                        creator_name: res.data.username,
+                        creator_id: res.data._id
+                        })
+                    })
                     .catch(err => console.log(err));
             })
             .catch(err => console.log(err));
@@ -52,13 +68,12 @@ class Character extends Component {
 
     render() {
         return (
-            <div>
-                {/* <button onClick={this.click}>Get</button>
-                <button onClick={this.list}>Character</button> */}
+            <div className="mb-2">
                 <div className="container">
                     <div className="row mt-2 mb-2">
                         <div className="col-lg-12 text-center">
-                            Creator: <h4>{this.state.creator_name}</h4>
+                            Creator:                     
+                        <a href={`/user/${this.state.creator_id}`}><h4>{this.state.creator_name}</h4></a>
                         </div>
                     </div>
                     <div className="row mt-3">
@@ -152,7 +167,7 @@ class Character extends Component {
                         </div>
                     </div>
                 </div>
-                <button className="btn-primary" onClick={this.delete}>Delete</button>
+                {this.isSignedIn()}
             </div>
         )
     }
