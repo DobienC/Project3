@@ -87,7 +87,7 @@ class Characters extends Component {
   render() {
     return (
         <div>
-            <strong>Sort By: </strong>
+            <strong>Explore By: </strong>
             <button className="btn-primary mr-1 mt-1" onClick={this.sortByNewCharacters}>New</button>
             <button className="btn-primary mr-1 mt-1" onClick={this.shuffle}>Random</button>
             <button className="btn-primary mr-1 mt-1" onClick={this.getCharactersByClass}>Class</button>

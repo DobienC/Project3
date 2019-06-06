@@ -39,9 +39,11 @@ class UserPage extends Component {
                 </div>
                 <div className="row">
                     <div className="container">
-                        {this.state.characters.map(character => (
-                            <CharacterCard name={character.name} id={character._id} character={character}/>
-                        ))}
+                        <div className="row">
+                            {this.state.characters.map(character => (
+                                <div className="col-lg-4"><CharacterCard name={character.name} id={character._id} character={character}/></div>
+                            ))}
+                        </div>
                     </div>
                 </div>
             </div>

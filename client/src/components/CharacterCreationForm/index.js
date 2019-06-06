@@ -107,85 +107,85 @@ function CharacterCreationForm(props) {
                   <div className="col-lg-12 text-center">
                     <h5>Available Points</h5>
                     <h5>{props.points}</h5>
-                    <h6>Stats must be in range of 7-17</h6>
+                    <h6>Stats must be in range of 8-15</h6>
                   </div>
-                  <div className="col-lg-12">Strength
+                  <div className="col-lg-12"><strong>Strength</strong>
                     <div className="input-group input-group-lg">
                       <div className="input-group-prepend">
                         <span className="input-group-text">STR</span>
                       </div>
-                      <input type="number" min="7" max="17" defaultValue="8" onChange={props.handleInputChange} id="strength" className="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm" />
+                      <input type="number" min="8" max="15" defaultValue="8" step="1" onChange={props.handleInputChange} id="strength" className="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm" />
                     </div>
                   </div>
-                  <div className="col-lg-12">Dexterity
+                  <div className="col-lg-12"><strong>Dexterity</strong>
                     <div className="input-group input-group-lg">
                       <div className="input-group-prepend">
                         <span className="input-group-text">DEX</span>
                       </div>
-                      <input type="number" min="7" max="17" defaultValue="8" onChange={props.handleInputChange} id="dexterity" className="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm" />
+                      <input type="number" min="8" max="15" defaultValue="8" onChange={props.handleInputChange} id="dexterity" className="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm" />
                     </div>
                   </div>
-                  <div className="col-lg-12">Constitution
+                  <div className="col-lg-12"><strong>Constitution</strong>
                     <div className="input-group input-group-lg">
                       <div className="input-group-prepend">
                         <span className="input-group-text">CON</span>
                       </div>
-                      <input type="number" min="7" max="17" defaultValue="8" onChange={props.handleInputChange} id="constitution" className="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm" />
+                      <input type="number" min="8" max="15" defaultValue="8" onChange={props.handleInputChange} id="constitution" className="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm" />
                     </div>
                   </div>
-                  <div className="col-lg-12">Intelligence
+                  <div className="col-lg-12"><strong>Intelligence</strong>
                     <div className="input-group input-group-lg">
                       <div className="input-group-prepend">
                         <span className="input-group-text">INT</span>
                       </div>
-                      <input type="number" min="7" max="17" defaultValue="8" onChange={props.handleInputChange} id="intelligence" className="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm" />
+                      <input type="number" min="8" max="15" defaultValue="8" onChange={props.handleInputChange} id="intelligence" className="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm" />
                     </div>
                   </div>
-                  <div className="col-lg-12">Wisdom
+                  <div className="col-lg-12"><strong>Wisdom</strong>
                     <div className="input-group input-group-lg">
                       <div className="input-group-prepend">
                         <span className="input-group-text">WIS</span>
                       </div>
-                      <input type="number" min="7" max="17" defaultValue="8" onChange={props.handleInputChange} id="wisdom" className="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm" />
+                      <input type="number" min="8" max="15" defaultValue="8" onChange={props.handleInputChange} id="wisdom" className="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm" />
                     </div>
                   </div>
-                  <div className="col-lg-12">Charisma
+                  <div className="col-lg-12"><strong>Charisma</strong>
                     <div className="input-group input-group-lg">
                       <div className="input-group-prepend">
                         <span className="input-group-text">CHA</span>
                       </div>
-                      <input type="number" min="7" max="17" defaultValue="8" onChange={props.handleInputChange} id="charisma" className="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm" />
+                      <input type="number" min="8" max="15" defaultValue="8" onChange={props.handleInputChange} id="charisma" className="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm" />
                     </div>
                   </div>
                 </div>
                 <div className="col-lg-9">
                   <div className="row">
-                    <div className="col-lg-6">Personality Trait
+                    <div className="col-lg-6"><strong>Personality Trait</strong>
                       <div className="input-group">
                         <textarea className="form-control" onChange={props.handleInputChange} id="personalityTrait" aria-label="With textarea"></textarea>
                       </div>
                     </div>
-                    <div className="col-lg-6">Ideals
+                    <div className="col-lg-6"><strong>Ideals</strong>
                       <div className="input-group">
                         <textarea className="form-control" onChange={props.handleInputChange} id="ideals" aria-label="With textarea"></textarea>
                       </div>
                     </div>
-                    <div className="col-lg-6">Bonds
+                    <div className="col-lg-6"><strong>Bonds</strong>
                       <div className="input-group">
                         <textarea className="form-control" onChange={props.handleInputChange} id="bonds" aria-label="With textarea"></textarea>
                       </div>
                     </div>
-                    <div className="col-lg-6">Flaws
+                    <div className="col-lg-6"><strong>Flaws</strong>
                       <div className="input-group">
                         <textarea className="form-control" onChange={props.handleInputChange} id="flaws" aria-label="With textarea"></textarea>
                       </div>
                     </div>
-                    <div className="col-lg-12 mt-3">Appearance Description
+                    <div className="col-lg-12 mt-3"><strong>Appearance Description</strong>
                       <div className="input-group">
                         <textarea className="form-control" onChange={props.handleInputChange} id="appearance" rows="5" aria-label="With textarea"></textarea>
                       </div>
                     </div>
-                    <div className="col-lg-12 mt-3">Origin Story
+                    <div className="col-lg-12 mt-3"><strong>Origin Story</strong>
                       <div className="input-group">
                         <textarea className="form-control" onChange={props.handleInputChange} id="origin" rows="10" aria-label="With textarea"></textarea>
                       </div>
