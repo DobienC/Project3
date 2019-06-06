@@ -22,17 +22,17 @@ function CharacterCreationForm(props) {
                     </div>
                     <select name="race" id="race" onChange={props.handleInputChange}>
                       <option value=""></option>
+                      <option value="Hill Dwarf">Dwarf (Hill)</option>
+                      <option value="Mountain Dwarf">Dwarf (Mountain)</option>
+                      <option value="High Elf">Elf (High)</option>
+                      <option value="Wood Elf">Elf (Wood)</option>
+                      <option value="Dark Elf">Drow (Dark Elf)</option>
+                      <option value="Lightfoot Halfling">Halfling (Lightfoot)</option>
+                      <option value="Stout Halfling">Halfling (Stout)</option>
                       <option value="Human">Human</option>
-                      <option value="Hill Dwarf">Hill Dwarf</option>
-                      <option value="Mountain Dwarf">Mountain Dwarf</option>
-                      <option value="High Elf">High Elf</option>
-                      <option value="Wood Elf">Wood Elf</option>
-                      <option value="Dark Elf">Dark Elf (Drow)</option>
-                      <option value="Lightfoot Halfling">Lightfoot Halfling</option>
-                      <option value="Stout Halfling">Stout Halfling</option>
                       <option value="Dragonborn">Dragonborn</option>
-                      <option value="Forest Gnome">Forest Gnome</option>
-                      <option value="Rock Gnome">Rock Gnome</option>
+                      <option value="Forest Gnome">Gnome (Forest)</option>
+                      <option value="Rock Gnome">Gnome (Rock)</option>
                       <option value="Half-Orc">Half-Orc</option>
                       <option value="Tiefling">Tiefling</option>
                     </select>
@@ -74,22 +74,35 @@ function CharacterCreationForm(props) {
                     <div className="input-group-prepend">
                       <span className="input-group-text">Alignment</span>
                     </div>
-                    <input type="text" onChange={props.handleInputChange} id="alignment" className="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" />
+                    <select name="alignment" id="alignment" onChange={props.handleInputChange}>
+                      <option value=""></option>
+                      <option value="Lawful Good">Lawful Good (LG)</option>
+                      <option value="Neutral Good">Neutral Good (NG)</option>
+                      <option value="Chaotic Good">Chaotic Good (CG)</option>
+                      <option value="Lawful Neutral">Lawful Neutral (LN)</option>
+                      <option value="Neutral">Neutral (N)</option>
+                      <option value="Chaotic Neutral">Chaotic Neutral (CN)</option>
+                      <option value="Lawful Evil">Lawful Evil (LE)</option>
+                      <option value="Neutral Evil">Neutral Evil (NE)</option>
+                      <option value="Chaotic Evil">Chaotic Evil (CE)</option>
+                    {/* <input type="text" onChange={props.handleInputChange} id="alignment" className="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" /> */}
+                    </select>
                   </div>
                 </div>
               </div>
               <div className="row">
                 <div className="col-lg-3">
                   <div className="col-lg-12 text-center">
-                    Available Points
+                    <h5>Available Points</h5>
                     <h5>{props.points}</h5>
+                    <h6>Stats must be in range of 7-17</h6>
                   </div>
                   <div className="col-lg-12">Strength
                     <div className="input-group input-group-lg">
                       <div className="input-group-prepend">
                         <span className="input-group-text">STR</span>
                       </div>
-                      <input type="number" min="6" max="20" defaultValue="8" onChange={props.handleInputChange} id="strength" className="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm" />
+                      <input type="number" min="7" max="17" defaultValue="8" onChange={props.handleInputChange} id="strength" className="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm" />
                     </div>
                   </div>
                   <div className="col-lg-12">Dexterity
@@ -97,7 +110,7 @@ function CharacterCreationForm(props) {
                       <div className="input-group-prepend">
                         <span className="input-group-text">DEX</span>
                       </div>
-                      <input type="number" min="6" max="20" defaultValue="8" onChange={props.handleInputChange} id="dexterity" className="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm" />
+                      <input type="number" min="7" max="17" defaultValue="8" onChange={props.handleInputChange} id="dexterity" className="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm" />
                     </div>
                   </div>
                   <div className="col-lg-12">Constitution
@@ -105,7 +118,7 @@ function CharacterCreationForm(props) {
                       <div className="input-group-prepend">
                         <span className="input-group-text">CON</span>
                       </div>
-                      <input type="number" min="6" max="20" defaultValue="8" onChange={props.handleInputChange} id="constitution" className="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm" />
+                      <input type="number" min="7" max="17" defaultValue="8" onChange={props.handleInputChange} id="constitution" className="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm" />
                     </div>
                   </div>
                   <div className="col-lg-12">Intelligence
@@ -113,7 +126,7 @@ function CharacterCreationForm(props) {
                       <div className="input-group-prepend">
                         <span className="input-group-text">INT</span>
                       </div>
-                      <input type="number" min="6" max="20" defaultValue="8" onChange={props.handleInputChange} id="intelligence" className="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm" />
+                      <input type="number" min="7" max="17" defaultValue="8" onChange={props.handleInputChange} id="intelligence" className="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm" />
                     </div>
                   </div>
                   <div className="col-lg-12">Wisdom
@@ -121,7 +134,7 @@ function CharacterCreationForm(props) {
                       <div className="input-group-prepend">
                         <span className="input-group-text">WIS</span>
                       </div>
-                      <input type="number" min="6" max="20" defaultValue="8" onChange={props.handleInputChange} id="wisdom" className="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm" />
+                      <input type="number" min="7" max="17" defaultValue="8" onChange={props.handleInputChange} id="wisdom" className="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm" />
                     </div>
                   </div>
                   <div className="col-lg-12">Charisma
@@ -129,7 +142,7 @@ function CharacterCreationForm(props) {
                       <div className="input-group-prepend">
                         <span className="input-group-text">CHA</span>
                       </div>
-                      <input type="number" min="6" max="20" defaultValue="8" onChange={props.handleInputChange} id="charisma" className="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm" />
+                      <input type="number" min="7" max="17" defaultValue="8" onChange={props.handleInputChange} id="charisma" className="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm" />
                     </div>
                   </div>
                 </div>
@@ -168,8 +181,10 @@ function CharacterCreationForm(props) {
                   </div>
                 </div>
               </div>
-              <p>{props.message}here</p>
-              <button type="button" onClick={props.pullData} className="btn-primary text-center">Create</button>
+              <div className="text-center mb-5 mt-2">
+                <h4>{props.message}</h4>
+                <button type="button" onClick={props.pullData} className="btn-primary">Create</button>
+              </div>
             </div>
         </div>
     );

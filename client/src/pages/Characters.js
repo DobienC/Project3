@@ -88,9 +88,6 @@ class Characters extends Component {
   render() {
     return (
         <div>
-            <h1>{localStorage.getItem("userName")}</h1>
-            <h5>{localStorage.getItem("token")}</h5>
-            <h6>{localStorage.getItem("userId")}</h6>
             <strong>Sort By: </strong>
             <button className="btn-primary mr-1 mt-1" onClick={this.sortByNewCharacters}>New</button>
             <button className="btn-primary mr-1 mt-1" onClick={this.shuffle}>Random</button>
@@ -106,25 +103,3 @@ class Characters extends Component {
 }
 
 export default Characters;
-
-
-  // User Stuff
-  // getUsers = () => {
-  //   API.getUsers(0)
-  //     .then(res =>
-  //       console.log("Here: " + res.data)  
-  //     )
-  //     .catch(err => console.log(err));
-  // }
-
-  // createUser = () => {
-  //   API.createUser({
-  //     name: "Dobien",
-  //     email: "Dobien@gmail.com",
-  //     password: "Password"
-  //   })
-  //     .then(res => 
-  //       console.log(res.data)
-  //     )
-  //     .catch(err => console.log(err));
-  // }

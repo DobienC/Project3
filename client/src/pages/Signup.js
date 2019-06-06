@@ -23,6 +23,7 @@ class Signup extends Component {
                             localStorage.setItem("userName", this.parseJwt(newRes.data.token).username);
                             localStorage.setItem("userId", this.parseJwt(newRes.data.token).id)
                             localStorage.setItem("token", newRes.data.token);
+                            window.location.assign('/characters');
                         })
                         .catch(err => {
                             console.log(err)

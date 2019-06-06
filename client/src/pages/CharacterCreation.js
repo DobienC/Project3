@@ -116,17 +116,25 @@ class CharacterCreation extends Component {
             localStorage.getItem('token')
         )
             .then(res => 
-            // console.log(res.data)
             window.location.assign('/characters')
         )
         .catch(err => console.log(err));
     }
 
     pullData = () => {
-        if(this.state.points < 0){
+        // console.log(this.state.race)
+        if(!this.state.race){
+            this.setState({message: "Please Select a Race"})
+        } else if(this.state.points < 0){
             this.setState({message: "Must reduce Points"});
         } else if(this.state.points >= 1) {
             this.setState({message: "Must use all Points"});
+        } else if(this.state.strength>17 || this.state.strength<7){this.setState({message: "Invalid stats"})
+        } else if(this.state.dexterity>17 || this.state.dexterity<7){this.setState({message: "Invalid stats"})
+        } else if(this.state.constitution>17 || this.state.constitution<7){this.setState({message: "Invalid stats"})
+        } else if(this.state.intelligence>17 || this.state.intelligence<7){this.setState({message: "Invalid stats"})
+        } else if(this.state.wisdom>17 || this.state.wisdom<7){this.setState({message: "Invalid stats"})
+        } else if(this.state.charisma>17 || this.state.charisma<7){this.setState({message: "Invalid stats"})
         } else {
             switch(this.state.race){
                 case "Human":

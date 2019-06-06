@@ -5,9 +5,9 @@ const characterSchema = new Schema({
     creator: { type: String, required: true },
     // Identification
     name: { type: String, required: true, default: "NewGuy" },
-    class: { type: String},
+    class: { type: String, default: "Citizen"},
     race: { type: String, required: true, default: "Human" },
-    background: { type: String },
+    background: { type: String, default: "Commoner" },
     alignment: { type: String, required: true, default: "Neutral" },
     // Stats
     strength: { type: Number, required: true, default: 8 },
@@ -26,10 +26,10 @@ const characterSchema = new Schema({
     ideals: { type: String, required: true, default: "N/A" },
     bonds: { type: String, required: true, default: "N/A" },
     flaws: { type: String, required: true, default: "N/A" },
-    origin: { type: String },
+    origin: { type: String, default: "A normal citizen" },
     // Equipment
     equipment: { type: [String]},
-    appearance: { type: String },
+    appearance: { type: String, default: "Farmer's clothes" },
     // Extra
     proficiencies: { type: String },
     languages: { type: [String], required: true, default: "Common" },

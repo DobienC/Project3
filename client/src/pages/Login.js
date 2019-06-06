@@ -17,7 +17,8 @@ class Login extends Component {
                 this.setState({message: "Login Success"});
                 localStorage.setItem("token", res.data.token);
                 localStorage.setItem("userName", this.parseJwt(res.data.token).username);
-                localStorage.setItem("userId", this.parseJwt(res.data.token).id)
+                localStorage.setItem("userId", this.parseJwt(res.data.token).id);
+                window.location.assign('/characters');
             })
             .catch(err =>{
                 this.setState({message: "Email/Password don't match"})

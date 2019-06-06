@@ -51,5 +51,12 @@ export default {
   },
   login: function(userData){
     return axios.post("/api/users/login", userData)
+  },
+  getUser: function(userData){
+    return axios.get("/api/users/getOne", {
+      params: {
+        _id: userData._id
+      }
+    })
   }
 };

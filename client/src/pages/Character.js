@@ -3,7 +3,7 @@ import API from "../utils/API";
 
 class Character extends Component {
     state = {
-        creator_id: "",
+        creator_name: "",
         id: this.props.match.params.id,
         character: {}
     }
@@ -15,10 +15,16 @@ class Character extends Component {
     // This needs the correct ID
     click = () => {
         API.getCharacter(this.props.match.params.id)
-            .then(res => this.setState({character: res.data}))
+            .then(res => {    
+                this.setState({character: res.data})
+            })
             .catch(err => console.log(err));
         API.getCharacter(this.props.match.params.id)
-            .then(res => this.setState({creator_id: res.data.creator}))
+            .then(res => {
+                API.getUser({_id: res.data.creator})
+                    .then(res => this.setState({creator_name: res.data.username}))
+                    .catch(err => console.log(err));
+            })
             .catch(err => console.log(err));
     }
 
@@ -50,6 +56,11 @@ class Character extends Component {
                 {/* <button onClick={this.click}>Get</button>
                 <button onClick={this.list}>Character</button> */}
                 <div className="container">
+                    <div className="row mt-2 mb-2">
+                        <div className="col-lg-12 text-center">
+                            Creator: <h4>{this.state.creator_name}</h4>
+                        </div>
+                    </div>
                     <div className="row mt-3">
                         <div className="col-lg-2">
                             <h1>{this.state.character.name}</h1>
