@@ -26,7 +26,7 @@ function Nav() {
       <div className="row">
         <div className="col-lg-12">
           <a className="navbar-brand" href="/">
-            <h1><u>D&D Adventurers Club</u></h1>
+            <h1><u>Adventurers Club</u></h1>
           </a>
           {/* <div className="navbar-collapse"> */}
             <a className="navbar-brand" href="/characters">

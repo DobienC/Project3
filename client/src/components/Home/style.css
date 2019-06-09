@@ -1,0 +1,23 @@
+.descrip{
+    border-radius: 25px;
+    background-color: #C73032;
+    /* padding: 2%; */
+    /* line-height: 20px; */
+}
+
+.descrip-text{
+    line-height: 3.0;
+    font-size: 12pt;
+    color: white;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+.welcomeT{
+    color: black;
+}
+
+.form{
+    border-radius: 25px;
+    border-style: solid;
+    border-color: black;
+}
