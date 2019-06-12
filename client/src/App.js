@@ -10,8 +10,6 @@ import UserPage from "./pages/UserPage";
 import Footer from "./components/Footer"
 import CharacterCreation from "./pages/CharacterCreation";
 import Nav from "./components/Nav";
-// import Books from "./pages/Books";
-// import Detail from "./pages/Detail";
 
 function App() {
   return (
@@ -27,8 +25,6 @@ function App() {
           <Route exact path="/user/:id" component={UserPage} />
           <Route exact path="/characterCreation" component={CharacterCreation} />
           <Route component={NoMatch} />
-          {/* <Route exact path="/books" component={Books} />
-          <Route exact path="/books/:id" component={Detail} /> */}
         </Switch>
         <Footer />
       </div>

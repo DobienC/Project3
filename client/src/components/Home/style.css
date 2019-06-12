@@ -21,3 +21,14 @@
     border-style: solid;
     border-color: black;
 }
+
+img{
+    width: 100%;
+}
+
+.create{
+    background-color: #C73032;
+    border-radius: 25px;
+    border-style: solid;
+    border-color: #C73032;
+}
