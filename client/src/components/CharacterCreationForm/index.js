@@ -9,6 +9,10 @@ function CharacterCreationForm(props) {
       return <div className="text-center">
         <h2>Warning: Must be signed in to create a character</h2>
       </div>;
+    } else {
+      return <div className="text-center mt-1 mb-1">
+        <h1><u>Character Sheet</u></h1>
+      </div>
     }
   }
 
@@ -23,7 +27,7 @@ function CharacterCreationForm(props) {
                     <div className="input-group-prepend">
                       <span className="input-group-text">Name</span>
                     </div>
-                    <input type="text" onChange={props.handleInputChange} id="name" className="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" />
+                    <input type="text" onChange={props.handleInputChange} id="name" placeholder="Villager" className="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" />
                   </div>
                 </div>
                 <div className="col-lg-3">
@@ -78,7 +82,7 @@ function CharacterCreationForm(props) {
                     <div className="input-group-prepend">
                       <span className="input-group-text">Background</span>
                     </div>
-                    <input type="text" onChange={props.handleInputChange} id="background" className="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" />
+                    <input type="text" onChange={props.handleInputChange} placeholder="Commoner" id="background" className="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" />
                   </div>
                 </div>
                 <div className="col-lg-3">
@@ -97,7 +101,6 @@ function CharacterCreationForm(props) {
                       <option value="Lawful Evil">Lawful Evil (LE)</option>
                       <option value="Neutral Evil">Neutral Evil (NE)</option>
                       <option value="Chaotic Evil">Chaotic Evil (CE)</option>
-                    {/* <input type="text" onChange={props.handleInputChange} id="alignment" className="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" /> */}
                     </select>
                   </div>
                 </div>
@@ -162,32 +165,36 @@ function CharacterCreationForm(props) {
                   <div className="row">
                     <div className="col-lg-6"><strong>Personality Trait</strong>
                       <div className="input-group">
-                        <textarea className="form-control" onChange={props.handleInputChange} id="personalityTrait" aria-label="With textarea"></textarea>
+                        <textarea className="form-control" onChange={props.handleInputChange} id="personalityTrait" aria-label="With textarea" rows="5"
+                        placeholder="Personality traits might describe the things your character likes, his or her past accomplishments, things your character dislikes or fears, your character’s self-attitude or mannerisms, or the influence of his or her ability scores."></textarea>
                       </div>
                     </div>
                     <div className="col-lg-6"><strong>Ideals</strong>
                       <div className="input-group">
-                        <textarea className="form-control" onChange={props.handleInputChange} id="ideals" aria-label="With textarea"></textarea>
+                        <textarea className="form-control" onChange={props.handleInputChange} id="ideals" aria-label="With textarea" rows="5"
+                        placeholder="Ideals might answer any of these questions: What are the principles that you will never betray? What would prompt you to make sacrifices? What drives you to act and guides your goals and ambitions? What is the single most important thing you strive for?"></textarea>
                       </div>
                     </div>
                     <div className="col-lg-6"><strong>Bonds</strong>
                       <div className="input-group">
-                        <textarea className="form-control" onChange={props.handleInputChange} id="bonds" aria-label="With textarea"></textarea>
+                        <textarea className="form-control" onChange={props.handleInputChange} id="bonds" aria-label="With textarea" rows="5"
+                        placeholder="Bonds might answer any of these questions: Whom do you care most about? To what place do you feel a special connection? What is your most treasured possession?"></textarea>
                       </div>
                     </div>
                     <div className="col-lg-6"><strong>Flaws</strong>
                       <div className="input-group">
-                        <textarea className="form-control" onChange={props.handleInputChange} id="flaws" aria-label="With textarea"></textarea>
+                        <textarea className="form-control" onChange={props.handleInputChange} id="flaws" aria-label="With textarea" rows="5"
+                        placeholder="Your character’s flaw represents some vice, compulsion, fear, or weakness—in particular, anything that someone else could exploit to bring you to ruin or cause you to act against your best interests. More significant than negative personality traits, a flaw might answer any of these questions: What enrages you? What’s the one person, concept, or event that you are terrified of? What are your vices?"></textarea>
                       </div>
                     </div>
                     <div className="col-lg-12 mt-3"><strong>Appearance Description</strong>
                       <div className="input-group">
-                        <textarea className="form-control" onChange={props.handleInputChange} id="appearance" rows="5" aria-label="With textarea"></textarea>
+                        <textarea className="form-control" onChange={props.handleInputChange} placeholder="Farmer's clothes" id="appearance" rows="5" aria-label="With textarea"></textarea>
                       </div>
                     </div>
                     <div className="col-lg-12 mt-3"><strong>Origin Story</strong>
                       <div className="input-group">
-                        <textarea className="form-control" onChange={props.handleInputChange} id="origin" rows="10" aria-label="With textarea"></textarea>
+                        <textarea className="form-control" onChange={props.handleInputChange} placeholder="A normal Citizen" id="origin" rows="10" aria-label="With textarea"></textarea>
                       </div>
                     </div>
                   </div>

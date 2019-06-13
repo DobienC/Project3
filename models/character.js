@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 const characterSchema = new Schema({
     creator: { type: String, required: true },
     // Identification
-    name: { type: String, required: true, default: "NewGuy" },
+    name: { type: String, required: true, default: "Villager" },
     class: { type: String, default: "Citizen"},
     race: { type: String, required: true, default: "Human" },
     background: { type: String, default: "Commoner" },

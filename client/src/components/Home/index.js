@@ -5,10 +5,14 @@ function HomeContent(props) {
 
   return (
       <div>
+        <div className="jumbotron jumbotron-fluid text-center">
+            <div className="container">
+                <h1 className="welcomeT mt-1 display-4">Welcome to <u>Adventurers Club</u></h1>
+            </div>
+        </div>
         <div className="container">
             <div className="row">
-                <div className="col-lg-12 text-center mt-1">
-                    <h1 className="welcomeT mt-1 mb-3">Welcome to <u>Adventurers Club</u></h1>
+                <div className="col-lg-12 text-center">
                     <div className="row mt-1">
                         <div className="col-lg-5 mt-5">
                             <div className="row">
@@ -26,7 +30,7 @@ function HomeContent(props) {
                         <div className="col-lg-5 form mt-5">
                             <div className="row">
                                 <div className="col-lg-12 mt-3">
-                                    <h6 className="mb-4">Are you a new or returning adventurer?</h6>
+                                    <h4 className="mb-4">Are you a new or returning adventurer?</h4>
                                     <button className="btn-primary" onClick={props.signup}>
                                         <h3>New Adventurer</h3>
                                         (new user)

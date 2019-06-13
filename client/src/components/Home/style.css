@@ -1,10 +1,17 @@
 .descrip{
     border-radius: 25px;
     background-color: #C73032;
-    /* padding: 2%; */
-    /* line-height: 20px; */
 }
 
+.btn-primary{
+    background-color: #C73032;
+}
+
+.jumbotron{
+    border-bottom: 6px solid #C73032; 
+    /* border-style: double;
+    border-color:#C73032; */
+}
 .descrip-text{
     line-height: 3.0;
     font-size: 12pt;

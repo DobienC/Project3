@@ -73,7 +73,7 @@ class Character extends Component {
                     <div className="row mt-2 mb-2">
                         <div className="col-lg-12 text-center">
                             Creator:                     
-                        <a href={`/user/${this.state.creator_id}`}><h4>{this.state.creator_name}</h4></a>
+                            <a href={`/user/${this.state.creator_id}`}><h4>{this.state.creator_name}</h4></a>
                         </div>
                     </div>
                     <div className="row mt-3">
