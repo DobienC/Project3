@@ -20,6 +20,7 @@ function Nav() {
       </div>;
     } else {
       return <div>
+        <a className="navbar-brand" href="/signup">Signup</a>
         <a className="navbar-brand" href="/login">Signin</a>
       </div>
     }

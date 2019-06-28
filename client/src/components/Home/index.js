@@ -141,22 +141,19 @@ function HomeContent(props) {
                             </div>
                         </div>
                         <div className="row mt-1">
-                            {/* <div className="col-lg-5 mt-5"> */}
-                                {/* <div className="row"> */}
-                                    <div className="col-lg-12 mt-5 mb-3 descrip">
-                                        <p className="descrip-text">
-                                            <h4 className="mt-2">NOTE:</h4>
-                                            <strong>
-                                                Content from this page is inspired and pulled from Dungeons and Dragons 5th edition.
-                                                There are free and official rules/tools from 
-                                                <a href="https://dnd.wizards.com/"> Wizards of the Coast</a> and 
-                                                <a href="https://www.dndbeyond.com/"> D&D Beyond</a>. Feel free to learn and explore
-                                                from the original creators.
-                                            </strong>
-                                        </p>
-                                    </div>
-                                {/* </div> */}
-                            {/* </div> */}
+                            <div className="col-lg-12 mt-5 mb-3 descrip">
+                                <p className="descrip-text">
+                                    <h4 className="mt-2">NOTE:</h4>
+                                    <strong>
+                                        Content from this page is inspired and pulled from Dungeons and Dragons 5th edition.
+                                        There are free and official rules/tools 
+                                        from <a href="https://dnd.wizards.com/">Wizards of the Coast
+                                        </a> and <a href="https://www.dndbeyond.com/">D&D Beyond
+                                        </a>. Feel free to learn and explore
+                                        from the original creators.
+                                    </strong>
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>

@@ -60,9 +60,3 @@ module.exports = {
       .catch(err => res.status(403).json(err));
   }
 };
-    //   deleteAll: function(req, res) {
-    //     db.User
-    //       .remove({})
-    //       .then(dbModel => res.json(dbModel))
-    //       .catch(err => res.status(422).json(err));
-    //   }
