@@ -1,6 +1,8 @@
 const db = require("../models");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
+const ENV = require('dotenv');
+ENV.config();
 
 // Defining methods for the usersController
 module.exports = {
@@ -8,9 +10,9 @@ module.exports = {
     db.User
       .find(req.query)
       .sort({ date: -1 })
-      .then(dbModel => 
-        res.json(dbModel)
-      )
+      .then(dbModel => {
+        res.json(dbModel);
+      })
       .catch(err => res.status(422).json(err));
   },
   findOne: function(req, res) {
@@ -48,7 +50,7 @@ module.exports = {
             const token = jwt.sign({
               username: dbModel.username,
               id: dbModel._id
-            }, "super-secrete");
+            }, process.env.PRIVATE_KEY);
             return res.json({ token });
           } else {
             return res.status(404).json({
