@@ -2,7 +2,9 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const characterSchema = new Schema({
+    // Data
     creator: { type: String, required: true },
+    favorites: {type: [String]},
     // Identification
     name: { type: String, required: true, default: "Villager" },
     class: { type: String, default: "Citizen"},
