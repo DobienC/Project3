@@ -60,5 +60,8 @@ export default {
         _id: userData._id
       }
     })
+  },
+  getFavorites: function(id){
+    return axios.get("/api/users/getFavorites" + id)
   }
 };

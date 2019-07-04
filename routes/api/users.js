@@ -5,6 +5,9 @@ const usersController = require("../../controllers/usersController");
 router.route("/")
   .get(usersController.findAll);
 
+router.route("/:id")
+  .get(usersController.getFavorites);
+
 router.route("/getOne")
   .get(usersController.findOne);
 
@@ -13,5 +16,5 @@ router.route("/login")
 
 router.route("/signup")
   .post(usersController.signup);
-  
+
 module.exports = router;

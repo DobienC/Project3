@@ -62,6 +62,18 @@ class Character extends Component {
         }
     }
 
+    getFavorites = () =>{
+        // API.this.props.match.params.id
+        API.getFavorites(
+            localStorage.getItem("userId")
+        )
+        .then(res => {
+            // console.log(res.data.favorites);
+            console.log(res);
+        })
+        .catch(err=>console.log(err));
+    }
+
     list = () => {
         console.log(this.state.character)
     }
@@ -69,6 +81,7 @@ class Character extends Component {
     render() {
         return (
             <div className="mb-2">
+                <button onClick={this.getFavorites}>Here</button>
                 <div className="container">
                     <div className="row mt-2 mb-2">
                         <div className="col-lg-12 text-center">

@@ -23,6 +23,14 @@ module.exports = {
       })
       .catch(err => res.status(422).json(err));
   },
+  getFavorites: function(req, res) {
+    db.User
+      .findOne(req.query)
+      .then(dbModel => {
+        res.json(dbModel)
+      })
+      .catch(err => res.status(422).json(err));
+  },
   signup: function(req, res) {
     const { username, email, password } = req.body;
 
