@@ -17,7 +17,6 @@ class UserPage extends Component {
     pullData = () => {
         API.getUser({_id: this.state.id})
             .then(res => {
-                console.log(res.data)
                 this.setState({creator_name: res.data.username})
             })
             .catch(err => console.log(err));
@@ -34,7 +33,6 @@ class UserPage extends Component {
                 <div className="row mt-3 mb-2">
                     <div className="col-lg-12 text-center">
                         <h2>User: <u>{this.state.creator_name}</u></h2>
-
                     </div>
                 </div>
                 <div className="row">

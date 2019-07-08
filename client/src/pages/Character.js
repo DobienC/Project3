@@ -33,7 +33,7 @@ class Character extends Component {
             .then(res => {
                 API.getUser({_id: res.data.creator})
                     .then(res => {
-                        console.log(res.data)
+                        // console.log(res.data)
                         this.setState({
                         creator_name: res.data.username,
                         creator_id: res.data._id
@@ -64,12 +64,12 @@ class Character extends Component {
 
     getFavorites = () =>{
         // API.this.props.match.params.id
-        API.getFavorites(
+        API.getUser(
             localStorage.getItem("userId")
         )
         .then(res => {
             // console.log(res.data.favorites);
-            console.log(res);
+            console.log(res.data);
         })
         .catch(err=>console.log(err));
     }
@@ -81,7 +81,7 @@ class Character extends Component {
     render() {
         return (
             <div className="mb-2">
-                <button onClick={this.getFavorites}>Here</button>
+                {/* <button onClick={this.getFavorites}>Here</button> */}
                 <div className="container">
                     <div className="row mt-2 mb-2">
                         <div className="col-lg-12 text-center">

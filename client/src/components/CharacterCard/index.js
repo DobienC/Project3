@@ -9,7 +9,7 @@ function CharacterCard(props) {
         <div className="card">
             <div className={`card-body ${props.character.class}`}>
                 <h3 className="card-title text-center"><u>{props.name}</u></h3>
-                <p className="card-text">
+                <div className="card-text">
                   <section>
                     <div className="float-left">Class: <h5 className="text-left">{props.character.class}</h5></div>
                     <div className="float-right">Race: <h5 className="text-right">{props.character.race}</h5></div>
@@ -18,10 +18,10 @@ function CharacterCard(props) {
                     <div className="float-right">Alignment: <h5 className="text-right">{props.character.alignment}</h5></div>
                   </section>
                   <br/><br/><br/>
-                <div className="text-center float-center">
-                  <a href={`/character/${props.id}`} className="btn btn-primary">Go to Character</a>
+                  <div className="text-center float-center">
+                    <a href={`/character/${props.id}`} className="btn btn-primary">Go to Character</a>
+                  </div>
                 </div>
-                </p>
             </div>
         </div>
     </div>
