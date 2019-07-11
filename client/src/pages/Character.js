@@ -91,7 +91,7 @@ class Character extends Component {
     render() {
         return (
             <div className="mb-2">
-                {this.isSignedIn_add()}
+                {/* {this.isSignedIn_add()} */}
                 <div className="container">
                     <div className="row mt-2 mb-2">
                         <div className="col-lg-12 text-center">
