@@ -13,10 +13,10 @@ function Nav() {
     const isLoggedIn = localStorage.getItem("userName");
     if (isLoggedIn) {
       return <div>
-        <h5>Welcome <a className="navbar-brand" href={`/user/${localStorage.getItem("userId")}`}>
+        <h6>Welcome <a className="navbar-brand" href={`/user/${localStorage.getItem("userId")}`}>
           <u>{localStorage.getItem("userName")}</u></a>
-          <h6 className="text-center"><button className="btn-dnd" onClick={logout}>Sign Out</button></h6>
-        </h5>
+          <span className="text-center"><button className="btn-dnd" onClick={logout}>Sign Out</button></span>
+        </h6>
       </div>;
     } else {
       return <div>

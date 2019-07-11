@@ -13,11 +13,21 @@ class Character extends Component {
         this.click();
     }
 
-    isSignedIn = () => {
+    // Check if User is logged in
+    isSignedIn_delete = () => {
         const isLoggedIn = localStorage.getItem("userName");
         if (isLoggedIn && localStorage.getItem("userName") === this.state.creator_name) {
           return <div className="text-center">
             <button className="btn-primary" onClick={this.delete}>Delete</button>
+          </div>;
+        }
+      }
+
+      isSignedIn_add = () => {
+        const isLoggedIn = localStorage.getItem("userName");
+        if (isLoggedIn) {
+          return <div>
+            <button onClick={this.getFavorites}>Here</button>
           </div>;
         }
       }
@@ -81,7 +91,7 @@ class Character extends Component {
     render() {
         return (
             <div className="mb-2">
-                {/* <button onClick={this.getFavorites}>Here</button> */}
+                {/* {this.isSignedIn_add()} */}
                 <div className="container">
                     <div className="row mt-2 mb-2">
                         <div className="col-lg-12 text-center">
@@ -180,7 +190,7 @@ class Character extends Component {
                         </div>
                     </div>
                 </div>
-                {this.isSignedIn()}
+                {this.isSignedIn_delete()}
             </div>
         )
     }
